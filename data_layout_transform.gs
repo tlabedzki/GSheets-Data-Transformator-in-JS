@@ -14,7 +14,7 @@ function data_layout_changer_run() {
 
   /* Settings: file & sheets adresses + other settings */
 
-  file_with_data = "1j2Z0dcQ9LaINjCBhJtnCWx7uqiP923N9YriE4Q_lZyM"
+  file_with_data = "1j2Z0dcQ9LaINjCBhJtnCWx7uqiP923N9Yriaddress1"
 
   source_sheet_name = 'data_to_change'
   target_sheet_name = 'changed_data'
