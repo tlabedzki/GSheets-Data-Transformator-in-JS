@@ -24,7 +24,7 @@ function data_layout_changer_run() {
 
   transformed_data = data_transformation(file_with_data, source_sheet_name, target_sheet_name);
   sorted_data = data_sort(transformed_data);
-  return_result_to_file(sorted_data, file_with_data, target_start_row, target_start_col);
+  return_result_to_file(sorted_data, file_with_data, target_start_row, target_start_col, font_size_of_pasted_data);
 
 }
 
@@ -81,9 +81,7 @@ function data_sort(transformed_data) {
 
     to_sort = []
 
-    to_sort.push(data[row][2])
-    to_sort.push(data[row][3])
-    to_sort.push(data[row][4])
+    to_sort.push(data[row][2], data[row][3], data[row][4])
     to_sort.sort(sortNum)
 
     sorted_data.push([data[row][0], data[row][1], to_sort[0], to_sort[1], to_sort[2], data[row][5]])
@@ -95,7 +93,7 @@ function data_sort(transformed_data) {
 
 }
 
-function return_result_to_file(data_to_return, file_with_data, target_start_row){
+function return_result_to_file(data_to_return, file_with_data, target_start_row, font_size_of_pasted_data){
 
   Logger.log('Connecting to target file.')
   ss = SpreadsheetApp.openById(file_with_data);
@@ -117,3 +115,4 @@ function return_result_to_file(data_to_return, file_with_data, target_start_row)
 function sortNum(a, b){
   return b - a;
 }
+
